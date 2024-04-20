@@ -51,3 +51,18 @@ void setup() {
   image(lunala, posLunala.x, posLunala.y);
   image(squirtle, posSquirtle.x, posSquirtle.y);
 }
+void keyPressed() {
+  if (key == 'a' || key == 'A') {
+    movimientosquirtle = -velocidadsquirtle;
+  } else if (key == 'd' || key == 'D') {
+    movimientosquirtle = velocidadsquirtle;
+  }
+}
+
+void keyReleased() {
+  if ((key == 'a' || key == 'A') && movimientosquirtle < 0) {
+    movimientosquirtle = 0;
+  } else if ((key == 'd' || key == 'D') && movimientosquirtle > 0) {
+    movimientosquirtle = 0;
+  }
+}
