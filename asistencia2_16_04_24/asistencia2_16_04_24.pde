@@ -12,3 +12,14 @@ private int velocidadsquirtle = 4;
 private int movimientosquirtle = 0;
 
 private PVector posEstrella;
+
+void setup() {
+  size(720, 720);
+  fondo = loadImage("fondo.jpg");
+  fondo.resize( 720 , 720);
+  squirtle = loadImage("squirtle.png");
+  squirtle.resize(138, 98);
+  lunala = loadImage("lunala.png");
+  lunala.resize(162, 162);
+  estrella = loadImage("estrella.png");
+  estrella.resize(140, 140);
