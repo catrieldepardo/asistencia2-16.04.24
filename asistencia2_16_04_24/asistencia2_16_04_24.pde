@@ -27,3 +27,27 @@ void setup() {
   posLunala = new PVector(0, 10);
   posSquirtle = new PVector(0, 505);
   posEstrella = new PVector(random(width - estrella.width), 0);
+  }
+  
+  void draw() {
+  posLunala.x += velocidadlunala * direccionlunala;
+  if (posLunala.x <= 0 || posLunala.x >= width - lunala.width) {
+    direccionlunala *= -1;
+  }
+
+  posSquirtle.x += movimientosquirtle;
+  posSquirtle.x = constrain(posSquirtle.x, 0, 668);
+
+  posEstrella.y += 6;
+
+  background(fondo);
+  image(estrella, posEstrella.x, posEstrella.y);
+  if (posEstrella.y > height) {
+    posEstrella.y = 0;
+    posEstrella.x = random(width - estrella.width);
+  }
+
+  noTint();
+  image(lunala, posLunala.x, posLunala.y);
+  image(squirtle, posSquirtle.x, posSquirtle.y);
+}
